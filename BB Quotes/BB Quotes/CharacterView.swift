@@ -90,7 +90,9 @@ struct CharacterView: View {
                                         image.resizable()
                                         image.scaledToFit()
                                         image.clipShape(.rect(cornerRadius: 25))
-                                        
+                                        onAppear(){
+                                            proxy.scrollTo(1, anchor: .bottom)
+                                        }   
                                     } placeholder: {
                                         ProgressView()
                                     }
