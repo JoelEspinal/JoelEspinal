@@ -14,6 +14,9 @@ struct CharacterView: View {
     
     var body: some View {
         GeometryReader { geo in
+            ScrollViewReader(content: { proxy in
+                
+            
             ZStack(alignment: .top, content: {
                 Image(show.lowercased().replacingOccurrences(of: " ", with: ""))
                     .resizable()
@@ -106,6 +109,7 @@ struct CharacterView: View {
                 }
                 .scrollIndicators(.hidden)
             })
+            })
         }
         .ignoresSafeArea()
     }
@@ -114,3 +118,4 @@ struct CharacterView: View {
 #Preview {
     CharacterView( character: ViewModel().character, show: "Breaking Bad")
 }
+
