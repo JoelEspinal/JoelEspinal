@@ -21,6 +21,8 @@
 		9BCA35372C17D1FB00DE5D79 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA35362C17D1FB00DE5D79 /* Quote.swift */; };
 		9BCA35392C17D2E600DE5D79 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA35382C17D2E600DE5D79 /* Character.swift */; };
 		9BD93F1A2C2B97F90057B64F /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD93F192C2B97F90057B64F /* CharacterView.swift */; };
+		9BF492302C2F9117004E956E /* sampleepisode.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BF4922F2C2F9117004E956E /* sampleepisode.json */; };
+		9BF492322C2F94A4004E956E /* BBQuotes17App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF492312C2F94A4004E956E /* BBQuotes17App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		9BCA35362C17D1FB00DE5D79 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		9BCA35382C17D2E600DE5D79 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		9BD93F192C2B97F90057B64F /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		9BF4922F2C2F9117004E956E /* sampleepisode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleepisode.json; sourceTree = "<group>"; };
+		9BF492312C2F94A4004E956E /* BBQuotes17App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotes17App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		9B88B7302C1690E800CAF5FA /* BB Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				9BF492312C2F94A4004E956E /* BBQuotes17App.swift */,
 				9B88B7312C1690E800CAF5FA /* BB_QuotesApp.swift */,
 				9B88B7332C1690E800CAF5FA /* ContentView.swift */,
 				9B0545A62C1BAD12007C6EB2 /* ViewModel.swift */,
@@ -101,6 +106,7 @@
 				9B88B7412C16929700CAF5FA /* samplecharacter.json */,
 				9B88B7402C16929700CAF5FA /* sampledeath.json */,
 				9B88B7422C16929700CAF5FA /* samplequote.json */,
+				9BF4922F2C2F9117004E956E /* sampleepisode.json */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B88B7392C1690E900CAF5FA /* Preview Assets.xcassets in Resources */,
+				9BF492302C2F9117004E956E /* sampleepisode.json in Resources */,
 				9B88B7432C16929700CAF5FA /* sampledeath.json in Resources */,
 				9B88B7362C1690E900CAF5FA /* Assets.xcassets in Resources */,
 				9B88B7452C16929700CAF5FA /* samplequote.json in Resources */,
@@ -178,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF492322C2F94A4004E956E /* BBQuotes17App.swift in Sources */,
 				9B22AAB82C1900AF002D8F5E /* Death.swift in Sources */,
 				9B88B7342C1690E800CAF5FA /* ContentView.swift in Sources */,
 				9BCA35372C17D1FB00DE5D79 /* Quote.swift in Sources */,
