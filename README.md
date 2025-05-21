@@ -15,6 +15,7 @@ Beyond mobile, I'm also curious about the world of IoT and enjoy exploring how c
 <h3>🛠️ Some of my projects:<h3/>
   * <a href="https://github.com/JoelEspinal/burger_app">Flutter Burger App - A modern food ordering UI prototype<a/>
   <br/>
+  <br/>
   * <a href="https://github.com/JoelEspinal/android_local_webview">Android Local Web View - Embedding web content into Android<a/>
 <br/>
 <hr/>
@@ -22,6 +23,7 @@ Beyond mobile, I'm also curious about the world of IoT and enjoy exploring how c
   <br/>
   <br/>
       * <a href="https://www.linkedin.com/in/espinaljo">Linkedin: @espinaljo<a/>
+  <br/>      
   <br/>
       * <a href="https://x.com/beanstage">X: @beanstage<a/>
 <br/>
