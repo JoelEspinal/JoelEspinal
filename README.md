@@ -5,7 +5,9 @@
 <br/>   
   a mobile developer with experience in Android, Flutter, IOS excited about UI/UX and enthusiast of IOT, let's build something great.
 <br/>
+<br/>
   I'm a passionate mobile developer from the <a href="https://www.google.com/search?q=dominican+republic&rlz=1C5CHFA_enDO1083DO1083&oq=dominican+republic&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQLhiABDIGCAIQRRhAMggIAxBFGCcYOzIGCAQQRRg7Mg0IBRAAGJECGIAEGIoFMg0IBhAAGJECGIAEGIoFMg0IBxAAGJECGIAEGIoF0gEIMzY5MWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">Dominican Republic<a/> with hands-on experience building apps in Android (Java/Kotlin), iOS (Swift), and Flutter. I love crafting beautiful, functional     user interfaces and am especially excited about how great UX can improve everyday life.
+<br/>
 <br/>
 Beyond mobile, I'm also curious about the world of IoT and enjoy exploring how connected devices can solve real-world problems.
 <br/>
@@ -17,6 +19,7 @@ Beyond mobile, I'm also curious about the world of IoT and enjoy exploring how c
 <br/>
 <hr/>
   📫 How to reach me: 
+  <br/>
   <br/>
       * <a href="https://www.linkedin.com/in/espinaljo">Linkedin: @espinaljo<a/>
   <br/>
