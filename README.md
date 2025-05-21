@@ -1,6 +1,7 @@
 
 <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="6%" height="6%"/>
   Hi, I'm   <a href="https://www.linkedin.com/in/espinaljo"> Joel Espinal<a/> from – Mobile Developer | Android • iOS • Flutter | UI/UX Enthusiast | IoT Curious Mind
+<br/>
 <br/>   
   a mobile developer with experience in Android, Flutter, IOS excited about UI/UX and enthusiast of IOT, let's build something great.
 <br/>
