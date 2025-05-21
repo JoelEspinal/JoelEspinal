@@ -9,9 +9,15 @@ a mobile developer with experience in Android, Flutter, IOS excited about UI/UX 
 <hr/>
 
 <h3>Some curious repositories<h3/>
-- <a href="https://github.com/JoelEspinal/burger_app">Flutter Burger App<a/>
+* <a href="https://github.com/JoelEspinal/burger_app">Flutter Burger App<a/>
 <br/>
-- <a href="https://github.com/JoelEspinal/android_local_webview">Android Local Web View<a/>
+* <a href="https://github.com/JoelEspinal/android_local_webview">Android Local Web View<a/>
+
+<br/>
+<hr/>
+
+<h3>Education<h3/>
+* <a href="https://github.com/JoelEspinal/Dex">IOS Pokedex App<a/>
  
 <!---
 JoelEspinal/JoelEspinal is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
