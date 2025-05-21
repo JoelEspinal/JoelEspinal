@@ -34,7 +34,7 @@ Beyond mobile, I'm also curious about the world of IoT and enjoy exploring how c
 <br/>
 <hr/>
 
-<h3>🎓 Education<h3/>
+<h3>🎓 Education:<h3/>
   * <a href="https://github.com/JoelEspinal/Dex">IOS Pokedex App<a/>
  
 <!---
