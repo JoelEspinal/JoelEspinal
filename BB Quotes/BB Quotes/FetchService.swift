@@ -9,6 +9,7 @@ import Foundation
 
 struct FetchService {
     
+    
     enum FetchError: Error {
         case badResponse
     }
@@ -33,7 +34,7 @@ struct FetchService {
         return quote[0]
     }
     
-    func fetchCharacter(_ name: String) async throws ->  Character {
+    func fetchCharacter(from name: String) async throws ->  Character {
         let characterURL = bbURL.appending(path: "characters")
         let fetchURL = characterURL.appending(queryItems: [URLQueryItem(name: "name", value: name)])
         
@@ -53,7 +54,7 @@ struct FetchService {
         return characters[0]
     }
     
-    func fetchDeath(for character: String) async throws -> Death? {
+    func fetchDeath(from character: String) async throws -> Death? {
         let deathURL = bbURL.appending(path: "deaths")
         
         // Fetch data
@@ -77,4 +78,27 @@ struct FetchService {
         
         return nil
     }
+    
+    func fetchEpisode(from show: String) async throws ->  Episode? {
+        let episodeURL = bbURL.appending(path: "episodes")
+        let fetchURL = episodeURL.appending(queryItems: [URLQueryItem(name: "production", value: show)])
+        
+        // Fetch data
+        let (data, response) = try await URLSession.shared.data(from: fetchURL)
+        
+        // Handle response
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            
+            throw FetchError.badResponse
+        } 
+        
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let episodes = try decoder.decode([Episode].self, from: data)
+        
+        return episodes.randomElement()
+    }
 }
+

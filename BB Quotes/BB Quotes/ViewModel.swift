@@ -1,11 +1,5 @@
-//
-//  ViewModel.swift
-//  BB Quotes
-//
-//  Created by Joel Espinal on 13/6/24.
-//
-
 import Foundation
+import SwiftUI
 
 enum FetchStatus {
     case notStarted
@@ -15,15 +9,14 @@ enum FetchStatus {
 }
 
 
-@Observable
 class ViewModel {
-        
-
+    
     private(set) var status: FetchStatus = .notStarted
-    private let fetcher = FetchService()
+    private let fetcher = FetchService();
     
     var quote: Quote
     var character: Character
+    var episode: Episode
     
     init() {
         let decoder = JSONDecoder()
@@ -34,17 +27,52 @@ class ViewModel {
         
         let characterData = try! Data(contentsOf: Bundle.main.url(forResource: "samplecharacter", withExtension: "json")!)
         character = try! decoder.decode(Character.self, from: characterData)
+        
+        let episodeData = try! Data(contentsOf: Bundle.main.url(forResource: "sampleepisode", withExtension: "json")!)
+        episode = try! decoder.decode(Episode.self, from:episodeData)
+        
     }
+
+    func getQuoteData(for show: String) async {
+        status = .fetching
+        
+        do {
+            quote = try await fetcher.fetchQoute(from: show)
+            
+            character = try await fetcher.fetchCharacter(from: show)
+            
+            character.death = try await fetcher.fetchDeath(from: character.name)
+            
+        } catch {
+            status = .failed(error: error)
+        }
+    }
+    
+    func getEpisode(for show: String) async {
+        status = .fetching
+        
+        do {
+            if let unwrapepisode = try await fetcher.fetchEpisode(from: show) {
+                episode = unwrapepisode
+                
+                status = .success
+            }
+        } catch {
+            status = .failed(error: error)
+        }
+    }
+    
     
     func getData(for show: String) async {
         status = .fetching
         
         do {
             quote = try await fetcher.fetchQoute(from: show)
-            character = try await fetcher.fetchCharacter(quote.author)
-            character.death = try await fetcher.fetchDeath(for: character.name)
             
-            status = .success
+            character = try await fetcher.fetchCharacter(from: show)
+            
+            character.death = try await fetcher.fetchDeath(from: character.name)
+            
         } catch {
             status = .failed(error: error)
         }

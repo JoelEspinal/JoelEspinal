@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuoteView: View {
+struct FetchView: View {
     let viewModel = ViewModel()
     let show: String
     
@@ -17,19 +17,18 @@ struct QuoteView: View {
         
         GeometryReader { geo in
             ZStack {
-                Image(show.lowercased()
-                    .replacingOccurrences(of: " ", with: ""))
+                Image(show.removeCaseAndSpaces())
                 .resizable()
                 .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
                 
                 VStack(alignment: .center, content: {
                     switch viewModel.status {
                     case FetchStatus.notStarted:
-                        EmptyView()
+                        EmptyView() 
                     case FetchStatus.fetching:
                         ProgressView()
                     case FetchStatus.success:
-                    
+                        
                         Text("\"\(viewModel.quote.quote)\"")
                             .minimumScaleFactor(0.5)
                             .multilineTextAlignment(.center)
@@ -45,8 +44,7 @@ struct QuoteView: View {
                                     .resizable()
                                     .scaledToFill()
                             } placeholder: {
-                                ProgressView()
-                            }
+                                ProgressView()                         }
                             .frame(width: geo.size.width / 1.1, height: geo.size.height / 1.2)
                             
                             Text(viewModel.quote.author)
@@ -63,6 +61,9 @@ struct QuoteView: View {
                         
                     case FetchStatus.failed(let error):
                         Text(error.localizedDescription)
+                        
+                    case FetchStatus.success:
+                        EpisodeVieww(episode: viewModel.episode)
                     }
                    
                 })
@@ -71,20 +72,42 @@ struct QuoteView: View {
             .frame(width: geo.size.width, height: geo.size.height)
         }
         .safeAreaInset(edge: VerticalEdge.bottom) {
-            Button {
-                Task {
-                    await viewModel.getData(for: show)
+            let episode = viewModel.episode // =  await viewModel.getEpisode(for: show)
+             EpisodeVieww(episode: episode)
+            HStack {
+                
+             Button("Show Sheet") {
+                let episode = viewModel.episode // =  await viewModel.getEpisode(for: show)
+                 EpisodeVieww(episode: episode)
                 }
-            } label: {
-                Text("Get Random Quote")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color("\(show)Button".replacingOccurrences(of: " ", with: "")))
-                    .clipShape(.rect(cornerRadius: 7))
-                    .shadow(color: Color("\(show)Shadow".replacingOccurrences(of: " ", with: "")), radius: 2)
+                .font(.title3)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color("\(show.removeSpaces())Button"))
+                .clipShape(.rect(cornerRadius: 7))
+                            
+                
+              Spacer()
+//
+                Button {
+                    Task {
+                        
+                        await viewModel.getQuoteData(for: show)
+                    }
+                } label: {
+                    Text("Get Random Quote")
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color("\(show.removeSpaces())Button"))
+                        .clipShape(.rect(cornerRadius: 7))
+                    
+                    //                    .shadow("\(show.removeSpaces(), .shadow, radius2)")
+                    
+                    
+                }
             }
-            .padding()
+                .padding()
         }
         .sheet(isPresented: $showCharacterInfo, content: {
             CharacterView(character: viewModel.character, show: show)
@@ -93,6 +116,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Better Call Saul")
+    FetchView(show: Constants.bbName)
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }

@@ -13,3 +13,4 @@ struct Death: Decodable {
     let details: String
     let lastWords: String
 }
+
